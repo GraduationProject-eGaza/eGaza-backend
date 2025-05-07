@@ -11,8 +11,8 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
 
-            // Common fields
-            $table->enum('type', ['citizen','government-institute','government-employee']);
+            // Common Fields
+            $table->enum('type', ['citizen', 'government-institute', 'government-employee']);
             $table->string('full_name')->nullable();
             $table->string('username')->unique()->nullable();
             $table->string('national_id')->nullable();
@@ -20,13 +20,15 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
             $table->string('password');
-            $table->enum('status', ['inactive', 'active'])->default('inactive'); // inactive until verified
-            $table->string('verification_code')->nullable();
-            $table->timestamp('verified_at')->nullable();
+            $table->enum('status', ['inactive', 'active'])->default('inactive');
+            $table->string('email_verified_code')->nullable();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->timestamp('email_verified_code_expiry')->nullable();
+
             $table->string('bio')->nullable();
             $table->string('profile_picture')->nullable();
 
-            // Government Institute specific
+            // Government Institute Fields
             $table->string('institution_name')->nullable();
             $table->string('institution_type')->nullable();
             $table->string('institution_email')->nullable();
@@ -36,17 +38,16 @@ return new class extends Migration
             $table->string('representative_national_id')->nullable();
             $table->string('representative_mobile')->nullable();
 
-            // Government Employee specific
+            // Government Employee Fields
             $table->string('employee_id')->nullable();
-            // `government_id` already declared for institute, reused here
 
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
-            $table->unique(['national_id', 'type']); // Composite unique constraint
 
+            // Constraints
+            $table->unique(['national_id', 'type']); // allow same national_id for different types
         });
-
     }
 
     public function down(): void
