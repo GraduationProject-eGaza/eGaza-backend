@@ -19,6 +19,7 @@ use App\Http\Controllers\Api\SocialLinkController;
 use App\Http\Controllers\Api\SearchController;
 use App\Http\Controllers\Api\MessageController;
 use App\Http\Controllers\Api\BillModule;
+use App\Http\Controllers\Api\InstituteController;
 
 
 /*
@@ -42,6 +43,9 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/forget-password', [AuthController::class, 'forgetPassword']);
 Route::post('/reset-password', [AuthController::class, 'resetPassword']);
 Route::middleware('auth:sanctum')->post('/change-password', [AuthController::class, 'changePassword']);
+
+// sprint 2
+
 Route::middleware('auth:sanctum')->group(function () {
 
     // 1. Send a friend request
@@ -57,7 +61,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/friends', [FriendController::class, 'listFriends']);
     // 6. Search for friends from friend list
     // http://localhost:8000/api/friends/search?search=ahmed
-     Route::get('/friends/search', [FriendController::class, 'searchFriends']);
+    Route::get('/friends/search', [FriendController::class, 'searchFriends']);
 
     Route::get('citizen/friends/count', [FriendController::class, 'countFriends']);
     Route::get('/citizen/notifications', [NotificationController::class, 'citizenNotifications']);
@@ -65,14 +69,12 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/notifications/{id}/mark-read', [NotificationController::class, 'markAsRead']);
     Route::post('/follow', [FollowController::class, 'follow']);
     Route::post('/unfollow', [FollowController::class, 'unfollow']);
-    Route::get('/my-follows', [FollowController::class, 'listFollows']);
-        // http://localhost:8000/api/friends/search?q=Minstry
+    //Route::get('/my-follows', [FollowController::class, 'listFollows']);
+    // http://localhost:8000/api/friends/search?q=Minstry
 
-        Route::get('/my-follows', [FollowController::class, 'searchFollowedInstitutes']);
+    Route::get('citizen/my-follows', [FollowController::class, 'listFollowedInstitutesWithSearch']);
 
     Route::post('/citizen/profile', [CitizenController::class, 'updateCitizenProfile']);
-Route::get('/public-profile/{username}', [CitizenController::class, 'show']);
-
 });
 Route::get('/public-profile/{username}', [CitizenController::class, 'show']);
 
@@ -142,7 +144,6 @@ Route::middleware('auth:sanctum')->prefix('employee')->group(function () {
     Route::get('/assigned-requests', [EmployeeServiceRequestController::class, 'assignedRequests']);
     Route::get('/assigned-requests/{id}', [EmployeeServiceRequestController::class, 'showAssignedRequest']);
     Route::put('/assigned-requests/{id}/status', [EmployeeServiceRequestController::class, 'updateRequestStatus']);
-    Route::post('/profile', [EmployeeController::class, 'updateEmployeeProfile']);
 });
 
 
@@ -220,4 +221,21 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::get('/citizen/assigned-bills', [BillModule::class, 'citizenBills']);
     Route::put('/citizen/assigned-bills/pay/{id}', [BillModule::class, 'payBill']);
+});
+
+
+// sprint 3
+Route::middleware(['auth:sanctum'])->group(function () {
+
+    Route::post('employee/profile', [EmployeeController::class, 'updateEmployeeProfile']);
+    Route::post('institute/profile', [InstituteController::class, 'updateInstituteProfile']);
+    //http://localhost:8000/api/institute/followers
+    //http://localhost:8000/api/institute/followers?q=ahmad
+    Route::get('/institute/followers', [FollowController::class, 'followersList']);
+    //http://localhost:8000/api/institute/employees
+    //http://localhost:8000/api/institute/employees?q=ahmad
+    Route::get('/institute/employees', [InstituteController::class, 'listEmployees']);
+    Route::get('/institute/dashboard', [InstituteController::class, 'overview']);
+
+
 });
