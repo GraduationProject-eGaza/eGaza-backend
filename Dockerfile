@@ -26,11 +26,14 @@ RUN apt-get update && apt-get install -y \
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Copy application code
-COPY . /var/www
+# Copy only composer files first (for caching install)
+COPY composer.json composer.lock ./
 
 # Install PHP dependencies
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+
+# Then copy the full application code
+COPY . /var/www
 
 # Set correct file permissions
 RUN chown -R www-data:www-data /var/www
