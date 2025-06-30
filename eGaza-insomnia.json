@@ -1,0 +1,3602 @@
+type: collection.insomnia.rest/5.0
+name: Graduation Project / E_Gaza
+meta:
+  id: wrk_c7519099b915426f86c2efd8880be4ff
+  created: 1746107119284
+  modified: 1746107119284
+  description: ""
+collection:
+  - name: Sprint1/Authentication
+    meta:
+      id: fld_4dfc22e122cd45a3ad2fc4f37cfa97b4
+      created: 1746107154307
+      modified: 1747070088179
+      sortKey: -1746107154307
+      description: ""
+    children:
+      - url: http://localhost:8000/api/register
+        name: register
+        meta:
+          id: req_860b4fd2d9994d7e859f5ccbc3abffde
+          created: 1746107160067
+          modified: 1751269354028
+          isPrivate: false
+          description: ""
+          sortKey: -1746107160067
+        method: POST
+        body:
+          mimeType: application/json
+          text: |+
+            
+            {
+              "type": "government-employee",
+              "email": "emploe4e@example.com",
+              "password": "password123",
+              "password_confirmation": "password123",
+              "full_name": " ahmad khalil",
+              "national_id": "133445956677",
+              "username": "ahmed",
+              "phone": "059998776",
+              "employee_id": "EMP-2025-08",
+              "government_id": "GOV123456",
+              "governorate": "Gaza",
+              "city": "Rafah",
+              "street": "Al-Quds Street",
+              "nearest_landmark": "Rafah School"
+            }
+
+
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_20bfda5de978466c816b66dc5acf44e2
+          - name: User-Agent
+            value: insomnia/10.3.0
+            id: pair_3c3694dfd86d48d0b4434432e8179348
+          - id: pair_d321c36d782743de93e9a1aca7862b4d
+            name: Accept
+            value: application/json
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/api/verify
+        name: verify
+        meta:
+          id: req_b2063df74456411087e08662f42cd4a7
+          created: 1746109861221
+          modified: 1749222882482
+          isPrivate: false
+          description: ""
+          sortKey: -1746109861221
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "type": "government-employee",
+              "national_id": "133445956677",
+            	"code": "25422"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_04fe651a08f1478bacfcbfdf80cc519b
+          - name: User-Agent
+            value: insomnia/10.3.0
+            id: pair_35acdb5fdbe6444a99d9edcdd1f17e78
+          - id: pair_2bf4f85b18ab48bfb453d68f84f9583d
+            name: Accept
+            value: application/json
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/api/login
+        name: login
+        meta:
+          id: req_8eb2680505c543898364533dca4b2b02
+          created: 1746218026502
+          modified: 1748192831566
+          isPrivate: false
+          description: ""
+          sortKey: -1746218026502
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "type": "citizen",
+              "national_id": "523456789",
+              "password": "password123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_e9969c97dea14276a61c22113edfac94
+          - name: User-Agent
+            value: insomnia/10.3.0
+            id: pair_02a93c618837442bb73eb4ab984c5c27
+          - id: pair_236c8ca387aa4c25921f1fcc40ee1d7b
+            name: Accept
+            value: application/json
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/api/forget-password
+        name: forget password
+        meta:
+          id: req_54233b21d2484ef48fbcad7c20c7347c
+          created: 1746269777282
+          modified: 1746891547004
+          isPrivate: false
+          description: ""
+          sortKey: -1746269777282
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "national_id": "123456789",
+              "type": "citizen",
+              "email":"citizen1@example.com"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.3.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/api/reset-password
+        name: reset password
+        meta:
+          id: req_f58314cd2f74449ca00b8659c293c737
+          created: 1746298124250
+          modified: 1746891549096
+          isPrivate: false
+          description: ""
+          sortKey: -1746298124250
+        method: POST
+        body:
+          mimeType: application/json
+          text: >
+            {
+              "email": "citizen1@example.com",
+              "type": "citizen",
+              "token": "CsmSYJkUQaUtaumKV876IECwFqyXNYmpwvvOm0zAPhjIEdCLoZC0daMoWrhmp9GN",
+              "new_password": "newpassword",
+              "new_password_confirmation": "newpassword"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_90fd86b4bf094bf8a296859220f394ac
+          - name: User-Agent
+            value: insomnia/10.3.0
+            id: pair_c924789c7b504ba1833f202ac218892a
+          - id: pair_35baf28703fd4e72ac2775b26f2728e8
+            name: Accept
+            value: application/json
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/api/change-password
+        name: change password
+        meta:
+          id: req_f23469765d09436bbc5b0f3632a2b6f9
+          created: 1746298670640
+          modified: 1746909957093
+          isPrivate: false
+          description: ""
+          sortKey: -1746298670640
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "password": "newpassword",
+              "new_password": "123password123",
+              "new_password_confirmation": "123password123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_9040c4f882464add859815892ebbcb9b
+          - name: User-Agent
+            value: insomnia/10.3.0
+            id: pair_ac7c57b28c9e45cd97ca84e8417d3975
+          - id: pair_073fc5db9823436a9a7220cebd5d53de
+            name: Authorization
+            value: Bearer
+              3|USpair_073fc5db9823436a9a7220cebd5d53deHT9q4NwRb27Oh98uC3m87cpPVDmBtmbs7uvNtU99f7d248
+            description: ""
+            disabled: false
+          - id: pair_49454c68ef554a73879fe46f42e90cd3
+            name: Accept
+            value: application/json
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: sprint2/citizen &institute engegment
+    meta:
+      id: fld_5a728803b8d94fa78a6417ed456fe71d
+      created: 1746909709185
+      modified: 1749490625773
+      sortKey: -1746909709185
+      description: ""
+    children:
+      - name: Friendship
+        meta:
+          id: fld_42c440dcd87a42dfafff3a9b0d624353
+          created: 1746805990720
+          modified: 1746909722526
+          sortKey: -1746909713633
+          description: ""
+        children:
+          - url: http://localhost:8000/api/friend-request/send
+            name: send Friend Request
+            meta:
+              id: req_edfe18b0ad724eb6a0384c43b143c7a7
+              created: 1746218020795
+              modified: 1749465547369
+              isPrivate: false
+              description: ""
+              sortKey: -1746808045120
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "receiver_id": 6
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_91d1b345b50941f99922c9c1fee74446
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_5770d532317a40eea30c2aba5f2a2734
+              - id: pair_47762382a2f14cb48945fb0e66613b92
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_a579af31cf3f43818633fdb46d04141d
+                name: Authorization
+                value: Bearer 6|JBQRlvFf8QorjbuwPtj7TBGGWdUHj7wiprLbOUDL23394886
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/friend-request/respond/2
+            name: respond friend request
+            meta:
+              id: req_ddc66abc9b2f48ca8d712a1bfe829b99
+              created: 1746808045020
+              modified: 1749465515799
+              isPrivate: false
+              description: ""
+              sortKey: -1746808045020
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "status": "accepted"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_6eb757d64ed54d49815a799fe6555cfb
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_051fe6f20b2b49389226a22b64a367f4
+              - id: pair_afa0b1739b49404aa1c1c82499efb981
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_6b916c032eae40e195572b425eecb5d3
+                name: Authorization
+                value: Bearer 5|6FnmwHw5YLQABOWRDLVx143OaoOMFLVEthxlF6Bdac88b889
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/friends
+            name: list friends
+            meta:
+              id: req_e228da280f3949ecb637aa33e5f85ac6
+              created: 1746817201859
+              modified: 1749465659055
+              isPrivate: false
+              description: ""
+              sortKey: -1746817201859
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_925948387e8d48298452d942c3b94747
+              - id: pair_4c69fbfc870d49edb7e664693f81f0e7
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_1472be67aa764568a2f3c162ef788918
+                name: Content-Type
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_d50f6d73e04940dc9bf8a50e8967e052
+                name: Authorization
+                value: Bearer 6|JBQRlvFf8QorjbuwPtj7TBGGWdUHj7wiprLbOUDL23394886
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/friends/unfriend/11
+            name: unfriend
+            meta:
+              id: req_1d75ae13604c489db7e254e2921937eb
+              created: 1746817253895
+              modified: 1747308283873
+              isPrivate: false
+              description: ""
+              sortKey: -1746817253895
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_4fcb78d40f384a9fad889c3dd6fc49a7
+              - id: pair_7d5abd88bb11491b8e828ae2995167e3
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_fa483ad4a2fa4e488fbae2507f8e61bf
+                name: Content-Type
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_01115ad885ca40e89684d6ea0a7ffe46
+                name: Authorization
+                value: Bearer 9|PMXTNG5ZiyfQoCcRUXrgw0hH99fI4YZOCGijuAE7798947b1
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/citizen/friends/count
+            name: friend count
+            meta:
+              id: req_ab32eaa306184f289aa9e748675b7999
+              created: 1746980984751
+              modified: 1747499720675
+              isPrivate: false
+              description: ""
+              sortKey: -1746980984751
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_17ebddf2843d48c8951604ec388326c9
+              - id: pair_a29cf49468694b1baf24a695e7731db5
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_805b4ab21d9445bfb87b6e1c4ec9a9bb
+                name: Content-Type
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_6b4c50312d9b4264b150935ac1edba8c
+                name: Authorization
+                value: Bearer 13|dVLqrrcHCGZNnY8FLlGQ6AmsogzT8SJZ6P6JrR9wcd5ab426
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/friends/search?search=ahmed
+            name: "search from citizen friends by citizen "
+            meta:
+              id: req_18ccfb57a5b3489aaf4a90b4af4dcf2b
+              created: 1749464093546
+              modified: 1749487088588
+              isPrivate: false
+              description: ""
+              sortKey: -1746980984851
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_df186aa6def1415ba7adf0f0be064a15
+              - id: pair_ba3d140ab0e54e7394f94bd101020dda
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_459971584a3c479db23f4e14c61c235b
+                name: Authorization
+                value: Bearer 6|JBQRlvFf8QorjbuwPtj7TBGGWdUHj7wiprLbOUDL23394886
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Notification
+        meta:
+          id: fld_f928a5dc8f2c430ca302ca983a9469ef
+          created: 1746806015276
+          modified: 1747895197791
+          sortKey: -1746909713533
+          description: ""
+        children:
+          - url: http://localhost:8000/api/citizen/notifications
+            name: "citizen notification  "
+            meta:
+              id: req_2ed345db22cf47719de6bc704d1dd31b
+              created: 1746806034532
+              modified: 1749400570954
+              isPrivate: false
+              description: ""
+              sortKey: -1746806034532
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_f62a67f6d7d34970946c98b6bdec3ac5
+              - id: pair_353b550509434a8b9600b4bcb16dd941
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_67fdf7b3c1d1481c9e2393a6e11d9ab4
+                name: Content-Type
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_714b96f4aa0c4acd9382465ce7f4a96a
+                name: Authorization
+                value: " Bearer 6|JBQRlvFf8QorjbuwPtj7TBGGWdUHj7wiprLbOUDL23394886"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/institute/notifications
+            name: institution notification
+            meta:
+              id: req_216753afe2eb4eca9060adcdc94baa22
+              created: 1747067627887
+              modified: 1749225748155
+              isPrivate: false
+              description: ""
+              sortKey: -1747152682178
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_bfaf088f01e046c28e18fa4315a734a6
+              - id: pair_58ee0e05cd664067be188895200bfb3e
+                name: Content-Type
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_7af0a30d650f4de4b11734528a747862
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_9b0e2af34de84fc891e6849a44b12864
+                name: Authorization
+                value: " Bearer 1|HlEmdu6EYGiyV3bnl5N7cWvZOwMiGHcUnXSw4Z1Wc9d318df"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/notifications/6613f396-6d3f-43a6-9dc2-cba9151d7bf9/mark-read
+            name: mark read
+            meta:
+              id: req_6f6bd048cbf94a849257d897f4af40fa
+              created: 1747152665907
+              modified: 1749225774366
+              isPrivate: false
+              description: ""
+              sortKey: -1747152665907
+            method: POST
+            headers:
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_8e3fb8583c2e4442a60fb28a3aefa5a2
+              - id: pair_3b66436b84274970b166b346c6128c74
+                name: Content-Type
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_dc890334bc5244169ec4d31eea51cc20
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_b50e8fe9da0048008df826ec5152f78a
+                name: Authorization
+                value: Bearer 17|3Ps7K1l4B63VGwhhfAB5W8QgGOqpFebz7EsUEoWId3597750
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/employee/notifications
+            name: "employee notification "
+            meta:
+              id: req_d898bd54813943a0a522f8c9e1767581
+              created: 1747500856292
+              modified: 1749312169629
+              isPrivate: false
+              description: ""
+              sortKey: -1747152682078
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_517b63d0883e4bd7b621440cfe27a1ff
+              - id: pair_3d63d4208ebf4eaf9945ab93542a6c82
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_228ff594b30c4c78a6720249bdb4543c
+                name: Content-Type
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_cacc9597ddb34b0e90507e12ce9f3be4
+                name: Authorization
+                value: " Bearer 4|rtKSsvJm4yIDep5QpCG1qkSIzscejHshdG6SRc32620fabd2"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/notifications/unread-count
+            name: Count unread notifications
+            meta:
+              id: req_dc697880a54c4c3bbb488e185833acfa
+              created: 1749295001648
+              modified: 1749295265261
+              isPrivate: false
+              description: ""
+              sortKey: -1747066825329
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_8e3fb8583c2e4442a60fb28a3aefa5a2
+              - id: pair_3b66436b84274970b166b346c6128c74
+                name: Content-Type
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_dc890334bc5244169ec4d31eea51cc20
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_b50e8fe9da0048008df826ec5152f78a
+                name: Authorization
+                value: Bearer 6|JBQRlvFf8QorjbuwPtj7TBGGWdUHj7wiprLbOUDL23394886
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Follow features
+        meta:
+          id: fld_e0943c1458794b448a5df348f3331f87
+          created: 1746909687273
+          modified: 1749490525232
+          sortKey: -1746909713433
+          description: ""
+        children:
+          - url: http://localhost:8000/api/follow
+            name: follow
+            meta:
+              id: req_3411ac867e8d47928081c1e35c321849
+              created: 1746909755701
+              modified: 1749488581393
+              isPrivate: false
+              description: ""
+              sortKey: -1746909755701
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "government_institute_id": 10
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_9b8422a27de14bccb2fc19e632dd67ee
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_5f7eb939aec749babefb045405e47646
+              - id: pair_737c7a09cc094adeb8fed9d50621cf91
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_65d9f6ee8c944bd1ba344f4d9d673fcd
+                name: Authorization
+                value: " Bearer 6|JBQRlvFf8QorjbuwPtj7TBGGWdUHj7wiprLbOUDL23394886"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/unfollow
+            name: unfollow
+            meta:
+              id: req_c96eaab8177141e9b9483d2fbf41c038
+              created: 1746909760576
+              modified: 1747070058324
+              isPrivate: false
+              description: ""
+              sortKey: -1746909760576
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "government_institute_id": 13
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_aae3c2aefe6048a39c7246ff8dee259b
+              - id: pair_149c8efba7334825a9a06ef44a63519a
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_08ae324ed55842c9b6a9163d18eccccd
+                name: Authorization
+                value: Bearer 9|PMXTNG5ZiyfQoCcRUXrgw0hH99fI4YZOCGijuAE7798947b1
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/my-follows
+            name: list followed
+            meta:
+              id: req_cd705ac686714fd78fb17b55084b1a59
+              created: 1746909801027
+              modified: 1749570190161
+              isPrivate: false
+              description: ""
+              sortKey: -1746909801027
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_295d4d34a68d4db48e90bbc33894a765
+              - id: pair_7638dfd1bf0d4660b0055b10e52cc227
+                name: Content-Type
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_e42322323c374de7b27be8b9b4ea14fd
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_5827b57407a447ce8e0fa262a36e3cbd
+                name: Authorization
+                value: Bearer 6|JBQRlvFf8QorjbuwPtj7TBGGWdUHj7wiprLbOUDL23394886
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/citizen/my-follows?q=gaza
+            name: search at list followed
+            meta:
+              id: req_96fb6b21b93240baa2205d3fcddf6f61
+              created: 1749487529488
+              modified: 1749570899444
+              isPrivate: false
+              description: ""
+              sortKey: -1746909780801.5
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_295d4d34a68d4db48e90bbc33894a765
+              - id: pair_7638dfd1bf0d4660b0055b10e52cc227
+                name: Content-Type
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_e42322323c374de7b27be8b9b4ea14fd
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_5827b57407a447ce8e0fa262a36e3cbd
+                name: Authorization
+                value: " Bearer 5|6FnmwHw5YLQABOWRDLVx143OaoOMFLVEthxlF6Bdac88b889"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/institute/followers?q=Khatib
+            name: list followers and search by institute
+            meta:
+              id: req_b5175cf602bc407dbd2f4d0d0349b60a
+              created: 1749570365075
+              modified: 1749570930833
+              isPrivate: false
+              description: ""
+              sortKey: -1746909790914.25
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_295d4d34a68d4db48e90bbc33894a765
+              - id: pair_7638dfd1bf0d4660b0055b10e52cc227
+                name: Content-Type
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_e42322323c374de7b27be8b9b4ea14fd
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_5827b57407a447ce8e0fa262a36e3cbd
+                name: Authorization
+                value: Bearer 1|HlEmdu6EYGiyV3bnl5N7cWvZOwMiGHcUnXSw4Z1Wc9d318df
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/institute/employees
+            name: list employee and search by institute
+            meta:
+              id: req_3924ab96eb9d4481a3e6853375f3af87
+              created: 1749571222425
+              modified: 1749572066036
+              isPrivate: false
+              description: ""
+              sortKey: -1746909785857.875
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_295d4d34a68d4db48e90bbc33894a765
+              - id: pair_7638dfd1bf0d4660b0055b10e52cc227
+                name: Content-Type
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_e42322323c374de7b27be8b9b4ea14fd
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_5827b57407a447ce8e0fa262a36e3cbd
+                name: Authorization
+                value: Bearer 1|HlEmdu6EYGiyV3bnl5N7cWvZOwMiGHcUnXSw4Z1Wc9d318df
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Citizen Profile
+        meta:
+          id: fld_e3944f8199fa46efbc9124f1476ff832
+          created: 1747308192207
+          modified: 1749490551636
+          sortKey: -1747308192207
+          description: ""
+        children:
+          - url: http://localhost:8000/api/citizen/profile
+            name: "edit profile information "
+            meta:
+              id: req_62f8b3c976f04277815e044b79bafb33
+              created: 1747308196625
+              modified: 1749490841355
+              isPrivate: false
+              description: ""
+              sortKey: -1747308196625
+            method: POST
+            body:
+              mimeType: multipart/form-data
+              params:
+                - id: pair_ac8be164f6744c19ab8c24aa54275bce
+                  name: full_name
+                  value: "\tmina"
+                  description: ""
+                  disabled: false
+                - id: pair_0bcfc5d0fe9246e89410fba81d272af5
+                  name: phone
+                  value: "\t059123555433"
+                  description: ""
+                  disabled: false
+                - id: pair_d10f05d24fd14fb8a3cd4eaba2a38897
+                  name: email
+                  value: "\tina@example.com"
+                  description: ""
+                  disabled: false
+                - id: pair_a8c3a2be52d0460f865d79480a738c57
+                  name: governorate
+                  value: NorthGaza
+                  description: ""
+                  disabled: false
+                - id: pair_8c432f1c70ed4c80a30e4b73785612a1
+                  name: city
+                  value: jabalia
+                  description: ""
+                  disabled: false
+                - id: pair_72b67c13586a4325ae2ccff50dd1791d
+                  name: street
+                  value: Altranse
+                  description: ""
+                  disabled: false
+                - id: pair_d230a4993e0942f2a4292da01443e8ab
+                  name: nearest_landmark
+                  value: Market
+                  description: ""
+                  disabled: false
+                - id: pair_eac4c98a74b84bbfae7dd967a165fa08
+                  name: profile_picture
+                  value: ""
+                  description: ""
+                  disabled: false
+                  type: file
+                  fileName: C:\Users\alamiah\Downloads\ChatGPT Image 2 مايو 2025، 07_20_05 م.png
+            headers:
+              - name: Content-Type
+                value: multipart/form-data
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_df186aa6def1415ba7adf0f0be064a15
+              - id: pair_ba3d140ab0e54e7394f94bd101020dda
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_459971584a3c479db23f4e14c61c235b
+                name: Authorization
+                value: Bearer 1|nCYdhBdGCOxRmERH0QcRJVtoK6LUNb1HmYRgtkK4e5cacbc9
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/search?q=ahmed
+            name: search
+            meta:
+              id: req_f779de30f7bf46f28fb4f78836505dd8
+              created: 1749138566675
+              modified: 1749223315153
+              isPrivate: false
+              description: ""
+              sortKey: -1747230439401.5
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_df186aa6def1415ba7adf0f0be064a15
+              - id: pair_ba3d140ab0e54e7394f94bd101020dda
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_459971584a3c479db23f4e14c61c235b
+                name: Authorization
+                value: " Bearer 9|8eqpVSWv4cNE2MC2kTm6s0ZI558Mux9E4q9mLY1gfe6e89bd"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/search/1
+            name: show after search
+            meta:
+              id: req_aa43e38ba32d4a9085fa631901cb2c11
+              created: 1749138582484
+              modified: 1749223324898
+              isPrivate: false
+              description: ""
+              sortKey: -1747191560789.75
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_df186aa6def1415ba7adf0f0be064a15
+              - id: pair_ba3d140ab0e54e7394f94bd101020dda
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_459971584a3c479db23f4e14c61c235b
+                name: Authorization
+                value: " Bearer 9|8eqpVSWv4cNE2MC2kTm6s0ZI558Mux9E4q9mLY1gfe6e89bd"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/messages
+            name: message
+            meta:
+              id: req_d80861f30d734f5dac2a77fa34f409f4
+              created: 1749224461876
+              modified: 1749226193558
+              isPrivate: false
+              description: ""
+              sortKey: -1747269318013.25
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "receiver_id": 9,
+                  "content": " responce."
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_f2c06f67fa2348618c7930843e7da6e3
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_df186aa6def1415ba7adf0f0be064a15
+              - id: pair_ba3d140ab0e54e7394f94bd101020dda
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_459971584a3c479db23f4e14c61c235b
+                name: Authorization
+                value: " Bearer 6|JBQRlvFf8QorjbuwPtj7TBGGWdUHj7wiprLbOUDL23394886"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/messages/chat/2
+            name: "view chat "
+            meta:
+              id: req_c6bc3379ea904798906034fbdde10387
+              created: 1749224924803
+              modified: 1749225787241
+              isPrivate: false
+              description: ""
+              sortKey: -1747249878707.375
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_df186aa6def1415ba7adf0f0be064a15
+              - id: pair_ba3d140ab0e54e7394f94bd101020dda
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_459971584a3c479db23f4e14c61c235b
+                name: Authorization
+                value: " Bearer 6|JBQRlvFf8QorjbuwPtj7TBGGWdUHj7wiprLbOUDL23394886"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/messages/inbox
+            name: inbox message
+            meta:
+              id: req_a84d8af377ef47f0a2f6b1409fb372fb
+              created: 1749224963094
+              modified: 1749293658065
+              isPrivate: false
+              description: ""
+              sortKey: -1747240159054.4375
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_df186aa6def1415ba7adf0f0be064a15
+              - id: pair_ba3d140ab0e54e7394f94bd101020dda
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_459971584a3c479db23f4e14c61c235b
+                name: Authorization
+                value: " Bearer 6|JBQRlvFf8QorjbuwPtj7TBGGWdUHj7wiprLbOUDL23394886"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/messages/4/read
+            name: mark as read for message
+            meta:
+              id: req_53bea98f256e468ca08eec9cfad316e4
+              created: 1749293686072
+              modified: 1749294901224
+              isPrivate: false
+              description: ""
+              sortKey: -1747245018880.9062
+            method: PATCH
+            headers:
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_df186aa6def1415ba7adf0f0be064a15
+              - id: pair_ba3d140ab0e54e7394f94bd101020dda
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_459971584a3c479db23f4e14c61c235b
+                name: Authorization
+                value: " Bearer 9|8eqpVSWv4cNE2MC2kTm6s0ZI558Mux9E4q9mLY1gfe6e89bd"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/messages/unread-count
+            name: count of unread message
+            meta:
+              id: req_99b9bef285034e29b27e2c4a0d348113
+              created: 1749294578516
+              modified: 1749294908761
+              isPrivate: false
+              description: ""
+              sortKey: -1747242588967.6719
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_df186aa6def1415ba7adf0f0be064a15
+              - id: pair_ba3d140ab0e54e7394f94bd101020dda
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_459971584a3c479db23f4e14c61c235b
+                name: Authorization
+                value: " Bearer 9|8eqpVSWv4cNE2MC2kTm6s0ZI558Mux9E4q9mLY1gfe6e89bd"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/public-profile/edfgbhn
+            name: share profile for all type
+            meta:
+              id: req_eadaf2903b654662b2b7d3760fa3011c
+              created: 1749462393558
+              modified: 1749462626641
+              isPrivate: false
+              description: ""
+              sortKey: -1747288757319.125
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/10.3.0
+                id: pair_df186aa6def1415ba7adf0f0be064a15
+              - id: pair_ba3d140ab0e54e7394f94bd101020dda
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Anounncment process
+        meta:
+          id: fld_61d5729889b042309c506e1ead5b55b1
+          created: 1747499696552
+          modified: 1749116148739
+          sortKey: -1747499696552
+          description: ""
+        children:
+          - url: http://localhost:8000/api/employee/newannouncements
+            name: add announcements
+            meta:
+              id: req_2870335eab4048fe872a402abb41cd63
+              created: 1747499706629
+              modified: 1747907476423
+              isPrivate: false
+              description: ""
+              sortKey: -1747499706629
+            method: POST
+            body:
+              mimeType: multipart/form-data
+              params:
+                - id: pair_f556776463bb4447a4d01d557c360117
+                  name: title
+                  value: announcment2
+                  description: ""
+                  disabled: false
+                - id: pair_f925df411e4e47dc875586a4754664a2
+                  name: description
+                  value: Power announcment2will be off from 9 AM - 12 PM
+                  description: ""
+                  disabled: false
+                - id: pair_00a9c3d3627448a7a72c95d88d0979c9
+                  name: date
+                  value: 2025-04-22
+                  description: ""
+                  disabled: false
+                - id: pair_5e08edbc8e924985bc1fa03a7a2592fb
+                  name: file
+                  value: ""
+                  description: ""
+                  disabled: false
+                  type: file
+                  fileName: C:\Users\alamiah\OneDrive\Pictures\Saved Pictures\t).png
+            headers:
+              - name: Content-Type
+                value: multipart/form-data
+                id: pair_bd65f63b36164b1c94d83a14717b06e9
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_626c5df156f040fc94f66ba9ca46640a
+              - id: pair_991a9facc5524591b30ca1c1efb3e9b0
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_8c197feea3d145afa8a2f5b43aaee88c
+                name: Authorization
+                value: Bearer 3|QHcGX86MCF02yf8837tygvaoo6tRJT1la08d1vm1eeae3b1c
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/institute/announcements/11/approve
+            name: approve announcment
+            meta:
+              id: req_3314770a232749cd9d0a057a7e3618e0
+              created: 1747499709466
+              modified: 1747896278008
+              isPrivate: false
+              description: ""
+              sortKey: -1747499709466
+            method: POST
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_ec390a26b51a4b7a8e560c7703f9078f
+              - id: pair_004a5834cc6845ad8428fc90f0b4443f
+                name: Content-Type
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_122c52c9b5034d8caf7823256adb02ca
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_81064092c4d842f7870bd6d3d1ad1258
+                name: Authorization
+                value: Bearer 2|Bo0aYkYMgDPtyBCNj3zPCLsrpbslZt2oxJH3hizZ73e3479c
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/institute/announcements/12/reject
+            name: reject announvments
+            meta:
+              id: req_5a5fd67a492b460d9a8cd2ee0f58511d
+              created: 1747500354119
+              modified: 1747907498666
+              isPrivate: false
+              description: ""
+              sortKey: -1747500354119
+            method: POST
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_1d3bf0311db841a0b09e8b447a866770
+              - id: pair_c1bca20dc41e4394b4aa72dafebef145
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_6a94c937110f4ae884f0e88c0ab15cf9
+                name: Content-Type
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_d736735a01d54eb6b77dfcb91bbf4f2f
+                name: Authorization
+                value: Bearer 1|HlEmdu6EYGiyV3bnl5N7cWvZOwMiGHcUnXSw4Z1Wc9d318df
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/citizen/announcements/11/like
+            name: like
+            meta:
+              id: req_dee6f0718e0d4184ac911e7e8863e10c
+              created: 1747500447256
+              modified: 1747899281912
+              isPrivate: false
+              description: ""
+              sortKey: -1747500447256
+            method: POST
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_2cff3d5504c9419ba0baf49d27a04ca2
+              - id: pair_702e1828f10b4e7ebf2615c545a91bf9
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_4b317e1521e34aa385d102fd2067c92c
+                name: Content-Type
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_ca684ba751284c9ca71b71506771b4c0
+                name: Authorization
+                value: Bearer 5|6FnmwHw5YLQABOWRDLVx143OaoOMFLVEthxlF6Bdac88b889
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/citizen/announcements/11/comment
+            name: comment
+            meta:
+              id: req_c5ec818f2f4541809dff7ac44d9233f1
+              created: 1747500724405
+              modified: 1747899178170
+              isPrivate: false
+              description: ""
+              sortKey: -1747500400687.5
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "comment": "This is helpful"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_2cff3d5504c9419ba0baf49d27a04ca2
+              - id: pair_702e1828f10b4e7ebf2615c545a91bf9
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_ca684ba751284c9ca71b71506771b4c0
+                name: Authorization
+                value: Bearer 5|6FnmwHw5YLQABOWRDLVx143OaoOMFLVEthxlF6Bdac88b889
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/citizen/announcements/10/seen
+            name: seen
+            meta:
+              id: req_b8be7d1cf7f849a5ba06672929948017
+              created: 1747500782438
+              modified: 1747899435823
+              isPrivate: false
+              description: ""
+              sortKey: -1747500423971.75
+            method: POST
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_2cff3d5504c9419ba0baf49d27a04ca2
+              - id: pair_702e1828f10b4e7ebf2615c545a91bf9
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_4b317e1521e34aa385d102fd2067c92c
+                name: Content-Type
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_ca684ba751284c9ca71b71506771b4c0
+                name: Authorization
+                value: Bearer 5|6FnmwHw5YLQABOWRDLVx143OaoOMFLVEthxlF6Bdac88b889
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/citizen/announcements/11
+            name: "show announcment by cetizen "
+            meta:
+              id: req_88238b29d720408da02a796705a800d4
+              created: 1747501502016
+              modified: 1748101606499
+              isPrivate: false
+              description: ""
+              sortKey: -1747501502016
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_fd408aae2c15486b9ecfe02efdfc743b
+              - id: pair_a77bfb68cc5c421d973fc8cabfcfb396
+                name: Content-Type
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_236e224f2866482d96fb79deab8dfe8c
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_22287771966c490782d9b20c0f132d0e
+                name: Authorization
+                value: Bearer 5|6FnmwHw5YLQABOWRDLVx143OaoOMFLVEthxlF6Bdac88b889
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/citizen/announcements
+            name: citizen announcments
+            meta:
+              id: req_08b0df4a7ace496f86ccde812f1ccc2d
+              created: 1747501514328
+              modified: 1747907256042
+              isPrivate: false
+              description: ""
+              sortKey: -1747501514328
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_357034124e9c47bba50a86041aa4eccb
+              - id: pair_c8f8a5843f4149debeaefb3924d8dc22
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_58812f7a73ad457c87db31b5ec75afff
+                name: Content-Type
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_af1f2634c5d94b4c974670f8be1216af
+                name: Authorization
+                value: Bearer 5|6FnmwHw5YLQABOWRDLVx143OaoOMFLVEthxlF6Bdac88b889
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/institute/announcements
+            name: institute announcments
+            meta:
+              id: req_9cbd851384fa4c55b2c52599fbd76447
+              created: 1747841105174
+              modified: 1748101612915
+              isPrivate: false
+              description: ""
+              sortKey: -1747841105174
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_98ca758ce3514d9bb194f04c45a2d8eb
+              - id: pair_72fcdecabf9f46b88956d424d164e200
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_803e79cf5aea4970b535055d2ded316c
+                name: Content-Type
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_727af39ee299421b8469d5fb641e26bd
+                name: Authorization
+                value: Bearer 2|Bo0aYkYMgDPtyBCNj3zPCLsrpbslZt2oxJH3hizZ73e3479c
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/institute/announcements/5/update
+            name: update announcment by institute
+            meta:
+              id: req_f27d22514a3a488e9aaac25e626dbed3
+              created: 1747841187046
+              modified: 1747906720413
+              isPrivate: false
+              description: ""
+              sortKey: -1747841187047
+            method: POST
+            body:
+              mimeType: multipart/form-data
+              params:
+                - id: pair_4ecf966c37804c268918163f3f93e4fc
+                  name: title
+                  value: "updated title 3 "
+                  description: ""
+                  disabled: false
+                - id: pair_a801f6532ada4f0dbd37cc9e37883e14
+                  name: description
+                  value: updated content 3
+                  description: ""
+                  disabled: false
+                - id: pair_0dfca4f62dbf474fb2001784739f67fe
+                  name: date
+                  value: 2025-05-30
+                  description: ""
+                  disabled: false
+                - id: pair_029885186ee944a9bdc6c65e7d1b347d
+                  name: file
+                  value: ""
+                  description: ""
+                  disabled: false
+                  type: file
+                  fileName: C:\Users\alamiah\OneDrive\Pictures\Saved Pictures\o.jpg
+            headers:
+              - name: Content-Type
+                value: multipart/form-data
+                id: pair_c05771b1c0d24c8693aafcfc9ad84a30
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_9c3d51ff927e40e08804338ab5700002
+              - id: pair_1943a92c24ef46dc8584bb4e495dc2e0
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_3687881d1af34a068629ade42be9a172
+                name: Authorization
+                value: Bearer 2|Bo0aYkYMgDPtyBCNj3zPCLsrpbslZt2oxJH3hizZ73e3479c
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/institute/announcements/5/delete
+            name: destroy announcment by institute
+            meta:
+              id: req_6d7b11d6e2f54a57902068f4e53795a0
+              created: 1747841232319
+              modified: 1747906785960
+              isPrivate: false
+              description: ""
+              sortKey: -1747841232319
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_47bb97a960024997a585742fba19b7cd
+              - id: pair_4c2ca898842f4d9b8750a7bbda62d160
+                name: Content-Type
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_a98ca058afe441399602a2711a72dbbe
+                name: Authorization
+                value: Bearer 2|Bo0aYkYMgDPtyBCNj3zPCLsrpbslZt2oxJH3hizZ73e3479c
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/employee/announcements/1/update
+            name: update announcmnnt by employee
+            meta:
+              id: req_2d1040355fcd429db904ce89db4c42b8
+              created: 1747841259159
+              modified: 1747906544964
+              isPrivate: false
+              description: ""
+              sortKey: -1747841259159
+            method: POST
+            body:
+              mimeType: multipart/form-data
+              params:
+                - id: pair_1e1e559f04f64e1f9705b4b7576251fa
+                  name: title
+                  value: edit announcment
+                  description: ""
+                  disabled: false
+                - id: pair_1bfd4647d672464cabe67e9b3ef7c53d
+                  name: description
+                  value: New description
+                  description: ""
+                  disabled: false
+                  type: text
+                  multiline: false
+                - id: pair_e5f465d63abf4a8ab6a1e85da1b85a7e
+                  name: date
+                  value: 2025-06-01
+                  description: ""
+                  disabled: false
+                - id: pair_030b8b2316294cd38a2c31d822016c83
+                  name: file
+                  value: ""
+                  description: ""
+                  disabled: false
+                  type: file
+                  fileName: C:\Users\alamiah\OneDrive\Pictures\ui.png
+            headers:
+              - name: Content-Type
+                value: multipart/form-data
+                id: pair_6200258519bd4982b9de7900f41aa5be
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_a8d999ed67584c9bae562e8d927a870d
+              - id: pair_e2a6d5e742984200af562386f0cd0770
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_bcda4bfd818742838c4e6f7c64ea867e
+                name: Authorization
+                value: Bearer 3|QHcGX86MCF02yf8837tygvaoo6tRJT1la08d1vm1eeae3b1c
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/employee/announcements/1/delete
+            name: destroy announcmnet by employee
+            meta:
+              id: req_ea474c2d930146fab56aa8c5ef06f71e
+              created: 1747841301843
+              modified: 1747906793604
+              isPrivate: false
+              description: ""
+              sortKey: -1747841301843
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_39ba508a251847789f034810c8f0f831
+              - id: pair_84b712dac8ef4f2c88172eaf2c068194
+                name: Content-Type
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_fb01142863064cad85e3d44640a9fb90
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_8de6fe94e05342bf92e68b161b39489d
+                name: Authorization
+                value: Bearer 3|QHcGX86MCF02yf8837tygvaoo6tRJT1la08d1vm1eeae3b1c
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/employee/announcements
+            name: employee announcments
+            meta:
+              id: req_a99e27a87d1e45789eb625d4ce0e8430
+              created: 1747907172213
+              modified: 1748021437742
+              isPrivate: false
+              description: ""
+              sortKey: -1747907172213
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_451fdcf4337b472199fef17e0f69e39c
+              - id: pair_6b19c059191b40908794df65eabb3e11
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_aeff001ad224483a89bd16042674894d
+                name: Content-Type
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_a8343980ac9a42c1b9709498e3ca1be8
+                name: Authorization
+                value: Bearer 4|rtKSsvJm4yIDep5QpCG1qkSIzscejHshdG6SRc32620fabd2
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/institute/announcements/14
+            name: show announcment by insitiute from notification to approved or reject
+            meta:
+              id: req_0efeb49a7d71433fb8b52c6b7da3fab7
+              created: 1748100280946
+              modified: 1748101868729
+              isPrivate: false
+              description: ""
+              sortKey: -1747500974636
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_fd408aae2c15486b9ecfe02efdfc743b
+              - id: pair_a77bfb68cc5c421d973fc8cabfcfb396
+                name: Content-Type
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_236e224f2866482d96fb79deab8dfe8c
+                name: Accept
+                value: " application/json"
+                description: ""
+                disabled: false
+              - id: pair_22287771966c490782d9b20c0f132d0e
+                name: Authorization
+                value: Bearer 2|Bo0aYkYMgDPtyBCNj3zPCLsrpbslZt2oxJH3hizZ73e3479c
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Manege service by institute
+        meta:
+          id: fld_38350331e78948f4b12d02befa3963e0
+          created: 1748021352541
+          modified: 1749490568983
+          sortKey: -1749116133663
+          description: ""
+        children:
+          - url: http://localhost:8000/api/institute/services/add
+            name: add service type
+            meta:
+              id: req_da7fe3d749704304b2b0481e1fe1ea27
+              created: 1748021356377
+              modified: 1748858223941
+              isPrivate: false
+              description: ""
+              sortKey: -1748021356377
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "name": "new type ",
+                  "description": "type   for test  ",
+                  "assigned_employees": [4]
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_3a4c49e1cd6a4a789c614499c893b391
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 2|Bo0aYkYMgDPtyBCNj3zPCLsrpbslZt2oxJH3hizZ73e3479c"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/institute/services/18
+            name: edit service type
+            meta:
+              id: req_003d1b51cbb24ca8abba54ef810f13d7
+              created: 1748021482236
+              modified: 1748858258760
+              isPrivate: false
+              description: ""
+              sortKey: -1747964264295
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "name": "new type ",
+                  "description": "type   for test  ",
+                  "assigned_employees": [4]
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_281d108c35b64700aae922354dd000de
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 2|Bo0aYkYMgDPtyBCNj3zPCLsrpbslZt2oxJH3hizZ73e3479c"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/institute/services/10
+            name: delete service type
+            meta:
+              id: req_5e405f95439f4f369fb2e1249a3d9ef2
+              created: 1748021506279
+              modified: 1748447713734
+              isPrivate: false
+              description: ""
+              sortKey: -1747935718254
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_806a2ecb15024e109238cf1e4f78f207
+                name: Content-Type
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: Bearer 2|Bo0aYkYMgDPtyBCNj3zPCLsrpbslZt2oxJH3hizZ73e3479c
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/institute/services
+            name: list service type
+            meta:
+              id: req_c6e178add8ff45b89947bff8157fa8bd
+              created: 1748021534044
+              modified: 1748792774943
+              isPrivate: false
+              description: ""
+              sortKey: -1747921445233.5
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_806a2ecb15024e109238cf1e4f78f207
+                name: Content-Type
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 1|HlEmdu6EYGiyV3bnl5N7cWvZOwMiGHcUnXSw4Z1Wc9d318df"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/institute/incoming-requests?status=approved
+            name: list of incoming request
+            meta:
+              id: req_4360d9f888644ea1850575af84ca568b
+              created: 1748534953755
+              modified: 1748791709801
+              isPrivate: false
+              description: ""
+              sortKey: -1747914308723.25
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_806a2ecb15024e109238cf1e4f78f207
+                name: Content-Type
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: Bearer 2|Bo0aYkYMgDPtyBCNj3zPCLsrpbslZt2oxJH3hizZ73e3479c
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/institute/incoming-requests/assign-employee
+            name: "assigned employee to specific request "
+            meta:
+              id: req_de864a91d6fd4015aa2f6491b2fad05a
+              created: 1748534976345
+              modified: 1748966682959
+              isPrivate: false
+              description: ""
+              sortKey: -1747910740468.125
+            method: POST
+            body:
+              mimeType: application/json
+              text: |
+                {
+                  "service_request_id": 25,
+                  "employee_id": 5
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_3b7333dad8eb40d2bf8957272b1076a4
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 2|Bo0aYkYMgDPtyBCNj3zPCLsrpbslZt2oxJH3hizZ73e3479c"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/institute/services
+            name: filter the requests
+            meta:
+              id: req_377728d6d8fd49648885d49d3dca51bb
+              created: 1748535027259
+              modified: 1748879491545
+              isPrivate: false
+              description: ""
+              sortKey: -1747908956340.5625
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_806a2ecb15024e109238cf1e4f78f207
+                name: Content-Type
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 1|HlEmdu6EYGiyV3bnl5N7cWvZOwMiGHcUnXSw4Z1Wc9d318df"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: "Service request by cetizen "
+        meta:
+          id: fld_3bad69a1ab5e42e5ad1b50a93e13b11d
+          created: 1748106724666
+          modified: 1749490575635
+          sortKey: -1749116133863
+          description: ""
+        children:
+          - url: http://localhost:8000/api/citizen/service-requests/add
+            name: add service request
+            meta:
+              id: req_cf2fedfbcdac4ea79c5e41ecc12a31d4
+              created: 1748106778133
+              modified: 1749058163498
+              isPrivate: false
+              description: ""
+              sortKey: -1748106730478
+            method: POST
+            body:
+              mimeType: application/json
+              text: |
+                {
+                    "institute_id": 3,
+                    "service_type_id": 14,
+                    "description": "new to test ",
+                    "request_date": "2025-05-28"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_c6e76f2ca6c344ea9169f0f141da6492
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 5|6FnmwHw5YLQABOWRDLVx143OaoOMFLVEthxlF6Bdac88b889"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/citizen/service-requests
+            name: list of service request
+            meta:
+              id: req_a1573d1b082746eb9fb15c257d4d0efa
+              created: 1748106799602
+              modified: 1748791700261
+              isPrivate: false
+              description: ""
+              sortKey: -1748106730428
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 5|6FnmwHw5YLQABOWRDLVx143OaoOMFLVEthxlF6Bdac88b889"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/citizen/institutes-name
+            name: list of government name according to region
+            meta:
+              id: req_9204a2a1d25d4adab460b2c336c42e1e
+              created: 1748250118796
+              modified: 1748361481727
+              isPrivate: false
+              description: ""
+              sortKey: -1748064043402.5
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: Bearer 9|8eqpVSWv4cNE2MC2kTm6s0ZI558Mux9E4q9mLY1gfe6e89bd
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/citizen/institutes/3/service-types
+            name: list of service type according to institute which created for dropdown
+            meta:
+              id: req_0e721a6d9ba7466180297c44c4b5e9a5
+              created: 1748250159626
+              modified: 1748361529626
+              isPrivate: false
+              description: ""
+              sortKey: -1748042699889.75
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: Bearer 6|JBQRlvFf8QorjbuwPtj7TBGGWdUHj7wiprLbOUDL23394886
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: service reques by employees
+        meta:
+          id: fld_a04f6911d1f24e67907d75da826da8b7
+          created: 1748620857190
+          modified: 1749490572760
+          sortKey: -1749116133763
+          description: ""
+        children:
+          - url: http://localhost:8000/api/employee/assigned-requests?status=approved
+            name: list of assigned request
+            meta:
+              id: req_7408207e6ada41a7b28ff1ec5743ff25
+              created: 1748620882506
+              modified: 1748791730360
+              isPrivate: false
+              description: ""
+              sortKey: -1748620907906
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_806a2ecb15024e109238cf1e4f78f207
+                name: Content-Type
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: Bearer 3|QHcGX86MCF02yf8837tygvaoo6tRJT1la08d1vm1eeae3b1c
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/employee/assigned-requests/26/status
+            name: change status
+            meta:
+              id: req_b6062e9a20214867af070f7b5591d784
+              created: 1748620922622
+              modified: 1748858507048
+              isPrivate: false
+              description: ""
+              sortKey: -1748363819192
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |
+                {
+                  "status": "approved"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_7d273f686cd24707bac343e8e7f6d535
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: Bearer 3|QHcGX86MCF02yf8837tygvaoo6tRJT1la08d1vm1eeae3b1c
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/employee/assigned-requests/23
+            name: view specific assigned  request
+            meta:
+              id: req_38a390c1b1d64e02866ebf941a8f2a4d
+              created: 1748621301890
+              modified: 1748707613268
+              isPrivate: false
+              description: ""
+              sortKey: -1748492363549
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_806a2ecb15024e109238cf1e4f78f207
+                name: Content-Type
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: Bearer 3|QHcGX86MCF02yf8837tygvaoo6tRJT1la08d1vm1eeae3b1c
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: "Complaint by citizen "
+        meta:
+          id: fld_ec4b6acb70ba462db74a889505770b25
+          created: 1748879311977
+          modified: 1749490579163
+          sortKey: -1749116133963
+          description: ""
+        children:
+          - url: http://localhost:8000/api/citizen/complaints/add
+            name: add Complaints
+            meta:
+              id: req_87c4b6795be6465f93c5ef748eff5d3e
+              created: 1748879331144
+              modified: 1749058424640
+              isPrivate: false
+              description: ""
+              sortKey: -1748879373569
+            method: POST
+            body:
+              mimeType: application/json
+              text: >
+                {
+                  "institute_id": 3,
+                  "title": " testt Electricity Outage",
+                  "description": "There has been no electricity in our area for 12 hours.",
+                  "complaint_date": "2025-06-01"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_c6e76f2ca6c344ea9169f0f141da6492
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 5|6FnmwHw5YLQABOWRDLVx143OaoOMFLVEthxlF6Bdac88b889"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/citizen/complaints
+            name: "list of complaints "
+            meta:
+              id: req_5fdedfe16c144cf0ab0e5d9c8e73ed6a
+              created: 1748879351849
+              modified: 1748965082883
+              isPrivate: false
+              description: ""
+              sortKey: -1748879373669
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 5|6FnmwHw5YLQABOWRDLVx143OaoOMFLVEthxlF6Bdac88b889"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: "Complaints by institute "
+        meta:
+          id: fld_d2ad7e8c9e3140f6b556430c5ab9a7ad
+          created: 1748879441077
+          modified: 1749658469206
+          sortKey: -1749116134013
+          description: ""
+        children:
+          - url: http://localhost:8000/api/institute/complaints?status=resolved
+            name: list of incoming Complaints
+            meta:
+              id: req_00af303fba7c45368ddfe7be73b2b538
+              created: 1748879462331
+              modified: 1749056731344
+              isPrivate: false
+              description: ""
+              sortKey: -1748879474905
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_806a2ecb15024e109238cf1e4f78f207
+                name: Content-Type
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 2|Bo0aYkYMgDPtyBCNj3zPCLsrpbslZt2oxJH3hizZ73e3479c"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/institute/complaints/10/assign
+            name: assigned employee to specific complaint
+            meta:
+              id: req_8c2302d2d88647c1951ecf1183612c41
+              created: 1748879505706
+              modified: 1749058433634
+              isPrivate: false
+              description: ""
+              sortKey: -1748879475005
+            method: POST
+            body:
+              mimeType: application/json
+              text: |
+                {
+                  "employee_id": 4
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_3b7333dad8eb40d2bf8957272b1076a4
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 2|Bo0aYkYMgDPtyBCNj3zPCLsrpbslZt2oxJH3hizZ73e3479c"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Complaints by employee
+        meta:
+          id: fld_53c66091b6b94f0c91eb81c5ff28d323
+          created: 1748879551092
+          modified: 1749657131992
+          sortKey: -1749116134163
+          description: ""
+        children:
+          - url: http://localhost:8000/api/employee/complaints?status=resolved
+            name: list of assigned complaints
+            meta:
+              id: req_76fd20744f6c488aac14f6d861d86e77
+              created: 1748879575274
+              modified: 1749056700549
+              isPrivate: false
+              description: ""
+              sortKey: -1748879584966
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_806a2ecb15024e109238cf1e4f78f207
+                name: Content-Type
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 3|QHcGX86MCF02yf8837tygvaoo6tRJT1la08d1vm1eeae3b1c"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/employee/complaints/9/status
+            name: change  complaint status
+            meta:
+              id: req_467456201f174a39b57047f368bef2cf
+              created: 1748879605448
+              modified: 1749058608217
+              isPrivate: false
+              description: ""
+              sortKey: -1748879585066
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |
+                {
+                  "status": "resolved"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_7d273f686cd24707bac343e8e7f6d535
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: Bearer 3|QHcGX86MCF02yf8837tygvaoo6tRJT1la08d1vm1eeae3b1c
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/employee/complaints/7
+            name: view specific assigned  complaints
+            meta:
+              id: req_3d1c3e75832741a8a0202a78c1fadc49
+              created: 1748879633421
+              modified: 1749056495361
+              isPrivate: false
+              description: ""
+              sortKey: -1748879585166
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_806a2ecb15024e109238cf1e4f78f207
+                name: Content-Type
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: Bearer 3|QHcGX86MCF02yf8837tygvaoo6tRJT1la08d1vm1eeae3b1c
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: "connected profile "
+        meta:
+          id: fld_c5c5d96b61f049d09cce48316e6c0aa2
+          created: 1749116133563
+          modified: 1749490815867
+          sortKey: -1749116133563
+          description: ""
+        children:
+          - url: http://localhost:8000/api/citizen/social-links/add
+            name: add  social profile
+            meta:
+              id: req_7b09bb83c5d4405082b6f8fd1b560fc3
+              created: 1749116202324
+              modified: 1749462531521
+              isPrivate: false
+              description: ""
+              sortKey: -1749116215260
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "platform": "Instagram",
+                  "link": "https://instagram.com/yourprofile"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_c6e76f2ca6c344ea9169f0f141da6492
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 5|6FnmwHw5YLQABOWRDLVx143OaoOMFLVEthxlF6Bdac88b889"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/citizen/social-links
+            name: list social profile
+            meta:
+              id: req_8e31497fbff44080988eecf51d6a80e6
+              created: 1749116229252
+              modified: 1749136594001
+              isPrivate: false
+              description: ""
+              sortKey: -1748997900213
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 5|6FnmwHw5YLQABOWRDLVx143OaoOMFLVEthxlF6Bdac88b889"
+                description: ""
+                disabled: true
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/citizen/social-links/1
+            name: edit social profile
+            meta:
+              id: req_59f772aad4d643dcab4996238a3ef478
+              created: 1749116246643
+              modified: 1749490540762
+              isPrivate: false
+              description: ""
+              sortKey: -1749057057736.5
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "platform": "Instagram",
+                  "link": "https://instagram.com/yourprofile"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_c6e76f2ca6c344ea9169f0f141da6492
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 5|6FnmwHw5YLQABOWRDLVx143OaoOMFLVEthxlF6Bdac88b889"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/citizen/social-links/1
+            name: delete social profile
+            meta:
+              id: req_3d5994c158354385b344d01f46fa20ef
+              created: 1749116257197
+              modified: 1749136577807
+              isPrivate: false
+              description: ""
+              sortKey: -1748938742689.5
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 5|6FnmwHw5YLQABOWRDLVx143OaoOMFLVEthxlF6Bdac88b889"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: bill by institute
+        meta:
+          id: fld_626ba2dca25a4d06a5c48018b0a8ac4d
+          created: 1749309266788
+          modified: 1749490595438
+          sortKey: -1749116134063
+          description: ""
+        children:
+          - url: http://localhost:8000/api/institute/bills/add
+            name: add bill type
+            meta:
+              id: req_28fb6c25e60945f5a520142cadd0ab40
+              created: 1749309292307
+              modified: 1749400174267
+              isPrivate: false
+              description: ""
+              sortKey: -1749309302226
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "name": "ege ",
+                	"default_amount":140,
+                  "description": "bill type   for test 2  ",
+                  "assigned_employees": [12]
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_3a4c49e1cd6a4a789c614499c893b391
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: Bearer 7|JqWRmQCHVWp1RS5uOVgJwIwjIN2WvC8jap5gHGfV2f47f593
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/institute/assigned-bills?status=paid
+            name: "list of assigned bills "
+            meta:
+              id: req_a63848986dca4fb294532dc4fbeb8f4d
+              created: 1749310210801
+              modified: 1749459420995
+              isPrivate: false
+              description: ""
+              sortKey: -1749212758743
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: Bearer 7|JqWRmQCHVWp1RS5uOVgJwIwjIN2WvC8jap5gHGfV2f47f593
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/institute/bills/3
+            name: edit bill type
+            meta:
+              id: req_6bab2275258f4f84892fb465c32aaeb2
+              created: 1749310234554
+              modified: 1749313676444
+              isPrivate: false
+              description: ""
+              sortKey: -1749309302326
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "name": "3 edit type ",
+                		"default_amount":100,
+                  "description": "type   for test  ",
+                  "assigned_employees": [7]
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_281d108c35b64700aae922354dd000de
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 1|HlEmdu6EYGiyV3bnl5N7cWvZOwMiGHcUnXSw4Z1Wc9d318df"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/institute/bills/1
+            name: delete bill type
+            meta:
+              id: req_62d06fd2ab3b4948af3ef9ab7a50695b
+              created: 1749310259317
+              modified: 1749313748160
+              isPrivate: false
+              description: ""
+              sortKey: -1749309302426
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_806a2ecb15024e109238cf1e4f78f207
+                name: Content-Type
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 1|HlEmdu6EYGiyV3bnl5N7cWvZOwMiGHcUnXSw4Z1Wc9d318df"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/institute/services
+            name: list bill type
+            meta:
+              id: req_f1dd98cd175e42e39e60f36322dda496
+              created: 1749310288490
+              modified: 1749311335805
+              isPrivate: false
+              description: ""
+              sortKey: -1749261030484.5
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_806a2ecb15024e109238cf1e4f78f207
+                name: Content-Type
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 1|HlEmdu6EYGiyV3bnl5N7cWvZOwMiGHcUnXSw4Z1Wc9d318df"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: bill by employee
+        meta:
+          id: fld_c8e41b4b633547b9a23e2fbf60fc7a28
+          created: 1749314371671
+          modified: 1749657134453
+          sortKey: -1749116134263
+          description: ""
+        children:
+          - url: http://localhost:8000/api/employee/assign-bill
+            name: assign bill to citizen
+            meta:
+              id: req_c48ef6e3fa914be0b4461b72ed0838bc
+              created: 1749314425499
+              modified: 1749657265316
+              isPrivate: false
+              description: ""
+              sortKey: -1749314965514
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "national_id": "123456789",
+                  "bill_type_id": 5,
+                  "amount": 100,
+                  "due_date": "2025-06-15"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_3a4c49e1cd6a4a789c614499c893b391
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 3|QHcGX86MCF02yf8837tygvaoo6tRJT1la08d1vm1eeae3b1c"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/employee/bills?status=paid
+            name: list of assigned bills by employee
+            meta:
+              id: req_d1f880b069504b64882e572f3550d34f
+              created: 1749314458871
+              modified: 1749459367904
+              isPrivate: false
+              description: ""
+              sortKey: -1749314965414
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: "   Bearer 8|q5B9qqkZ7gprd0QNN7yQ96sfGRv7h83mKG1wlasVa9a5f8ca"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: bill by citizen
+        meta:
+          id: fld_2c73585e1897432e8d6d99665f624a64
+          created: 1749314482058
+          modified: 1749490604740
+          sortKey: -1749116134363
+          description: ""
+        children:
+          - url: http://localhost:8000/api/citizen/assigned-bills/pay/3
+            name: pay bill
+            meta:
+              id: req_0b85b10a249843dfa81d39733906cd66
+              created: 1749314898086
+              modified: 1749459177698
+              isPrivate: false
+              description: ""
+              sortKey: -1749315047130
+            method: PUT
+            body:
+              mimeType: application/json
+              text: "{}"
+            headers:
+              - name: Content-Type
+                value: application/json
+                id: pair_61bf71c3cff241d9af5c8537cb4de042
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 6|JBQRlvFf8QorjbuwPtj7TBGGWdUHj7wiprLbOUDL23394886"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:8000/api/citizen/assigned-bills?status=paid
+            name: list of assigned bill for citizen
+            meta:
+              id: req_e74ac0b534724800ae834a37f678574c
+              created: 1749315081784
+              modified: 1749459322942
+              isPrivate: false
+              description: ""
+              sortKey: -1749315047230
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.1.0
+                id: pair_f8bcbe78a59345749fd079db75e5d960
+              - id: pair_b8f9d796a6664f2f88a9faa26f4659a1
+                name: Accept
+                value: application/json
+                description: ""
+                disabled: false
+              - id: pair_64fea6ced5194ad489fcd452619ac519
+                name: Authorization
+                value: " Bearer 6|JBQRlvFf8QorjbuwPtj7TBGGWdUHj7wiprLbOUDL23394886"
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+  - name: sprint3/institute and employee completion
+    meta:
+      id: fld_b646c649a3554b4f951397cd96935175
+      created: 1747067624300
+      modified: 1749490701034
+      sortKey: -1747067624300
+      description: ""
+    children:
+      - url: http://localhost:8000/api/employee/profile
+        name: "edit employee profile information "
+        meta:
+          id: req_422e94750c7242479dc165a793ab6be0
+          created: 1748705971955
+          modified: 1749490923506
+          isPrivate: false
+          description: ""
+          sortKey: -1749490690119
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - id: pair_ac8be164f6744c19ab8c24aa54275bce
+              name: full_name
+              value: "\tminrra"
+              description: ""
+              disabled: false
+            - id: pair_0bcfc5d0fe9246e89410fba81d272af5
+              name: phone
+              value: "\t056123555433"
+              description: ""
+              disabled: false
+            - id: pair_d10f05d24fd14fb8a3cd4eaba2a38897
+              name: email
+              value: "\tinar@example.com"
+              description: ""
+              disabled: false
+            - id: pair_a8c3a2be52d0460f865d79480a738c57
+              name: governorate
+              value: Gaza
+              description: ""
+              disabled: false
+            - id: pair_8c432f1c70ed4c80a30e4b73785612a1
+              name: city
+              value: armal
+              description: ""
+              disabled: false
+            - id: pair_72b67c13586a4325ae2ccff50dd1791d
+              name: street
+              value: Altranse
+              description: ""
+              disabled: false
+            - id: pair_d230a4993e0942f2a4292da01443e8ab
+              name: nearest_landmark
+              value: Market
+              description: ""
+              disabled: false
+            - id: pair_eac4c98a74b84bbfae7dd967a165fa08
+              name: profile_picture
+              value: ""
+              description: ""
+              disabled: false
+              type: file
+              fileName: C:\Users\alamiah\OneDrive\Pictures\Saved Pictures\;.jpg
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+            id: pair_01ca1cfa48b743e895ee9c1e5a617709
+          - name: User-Agent
+            value: insomnia/10.3.0
+            id: pair_df186aa6def1415ba7adf0f0be064a15
+          - id: pair_ba3d140ab0e54e7394f94bd101020dda
+            name: Accept
+            value: " application/json"
+            description: ""
+            disabled: false
+          - id: pair_459971584a3c479db23f4e14c61c235b
+            name: Authorization
+            value: Bearer 3|QHcGX86MCF02yf8837tygvaoo6tRJT1la08d1vm1eeae3b1c
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/api/institute/profile
+        name: "edit institute profile information "
+        meta:
+          id: req_bc875bb6561844a19e9c1263946f6424
+          created: 1749490712111
+          modified: 1749494747094
+          isPrivate: false
+          description: ""
+          sortKey: -1749402868674.5
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - id: pair_ac8be164f6744c19ab8c24aa54275bce
+              name: institution_name
+              value: lectricity Distribution
+              description: ""
+              disabled: false
+            - id: pair_0bcfc5d0fe9246e89410fba81d272af5
+              name: institution_type
+              value: "\tElectricity Provider"
+              description: ""
+              disabled: false
+            - id: pair_d10f05d24fd14fb8a3cd4eaba2a38897
+              name: institution_email
+              value: "\tElectricityProvider@example.com"
+              description: ""
+              disabled: false
+            - id: pair_a8c3a2be52d0460f865d79480a738c57
+              name: official_phone
+              value: "088888888"
+              description: ""
+              disabled: false
+            - id: pair_8c432f1c70ed4c80a30e4b73785612a1
+              name: governorate
+              value: Gaza
+              description: ""
+              disabled: false
+            - id: pair_72b67c13586a4325ae2ccff50dd1791d
+              name: city
+              value: Gaza City
+              description: ""
+              disabled: false
+            - id: pair_d230a4993e0942f2a4292da01443e8ab
+              name: street
+              value: Market
+              description: ""
+              disabled: false
+            - id: pair_eac4c98a74b84bbfae7dd967a165fa08
+              name: representative_mobile
+              value: "0599000000"
+              description: ""
+              disabled: false
+              type: text
+              fileName: C:\Users\alamiah\OneDrive\Pictures\Saved Pictures\;.jpg
+              multiline: false
+            - id: pair_b6d74c103c864d20a2544da41007e5b0
+              name: profile_picture
+              value: ""
+              description: ""
+              disabled: false
+              type: file
+              fileName: C:\Users\alamiah\OneDrive\Pictures\im.png
+            - id: pair_b1f1f8e3b54045af8696b1bf3acd6081
+              name: email
+              value: fdgszf@example.com
+              description: ""
+              disabled: false
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+            id: pair_01ca1cfa48b743e895ee9c1e5a617709
+          - name: User-Agent
+            value: insomnia/10.3.0
+            id: pair_df186aa6def1415ba7adf0f0be064a15
+          - id: pair_ba3d140ab0e54e7394f94bd101020dda
+            name: Accept
+            value: " application/json"
+            description: ""
+            disabled: false
+          - id: pair_459971584a3c479db23f4e14c61c235b
+            name: Authorization
+            value: Bearer 1|HlEmdu6EYGiyV3bnl5N7cWvZOwMiGHcUnXSw4Z1Wc9d318df
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/api/institute/profile
+        name: "list of followers for institute "
+        meta:
+          id: req_5130df13f80840a78eabca9af01f1cd4
+          created: 1749494966134
+          modified: 1749495015676
+          isPrivate: false
+          description: ""
+          sortKey: -1749358957952.25
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/10.3.0
+            id: pair_df186aa6def1415ba7adf0f0be064a15
+          - id: pair_ba3d140ab0e54e7394f94bd101020dda
+            name: Accept
+            value: " application/json"
+            description: ""
+            disabled: false
+          - id: pair_459971584a3c479db23f4e14c61c235b
+            name: Authorization
+            value: Bearer 1|HlEmdu6EYGiyV3bnl5N7cWvZOwMiGHcUnXSw4Z1Wc9d318df
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/api/institute/profile
+        name: search from follower list
+        meta:
+          id: req_eab1793eb7ee4e66ae01939875b166ae
+          created: 1749495002662
+          modified: 1749495013169
+          isPrivate: false
+          description: ""
+          sortKey: -1749337002591.125
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/10.3.0
+            id: pair_df186aa6def1415ba7adf0f0be064a15
+          - id: pair_ba3d140ab0e54e7394f94bd101020dda
+            name: Accept
+            value: " application/json"
+            description: ""
+            disabled: false
+          - id: pair_459971584a3c479db23f4e14c61c235b
+            name: Authorization
+            value: Bearer 1|HlEmdu6EYGiyV3bnl5N7cWvZOwMiGHcUnXSw4Z1Wc9d318df
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8000/api/institute/dashboard
+        name: " institute dashboard"
+        meta:
+          id: req_900d1c5949a748a0941f0069409af501
+          created: 1749573240068
+          modified: 1749657464974
+          isPrivate: false
+          description: ""
+          sortKey: -1749490690219
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/10.3.0
+            id: pair_295d4d34a68d4db48e90bbc33894a765
+          - id: pair_7638dfd1bf0d4660b0055b10e52cc227
+            name: Content-Type
+            value: application/json
+            description: ""
+            disabled: false
+          - id: pair_e42322323c374de7b27be8b9b4ea14fd
+            name: Accept
+            value: application/json
+            description: ""
+            disabled: false
+          - id: pair_5827b57407a447ce8e0fa262a36e3cbd
+            name: Authorization
+            value: Bearer 1|HlEmdu6EYGiyV3bnl5N7cWvZOwMiGHcUnXSw4Z1Wc9d318df
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: sprint3/employee
+    meta:
+      id: fld_d7fb543612fd40b7a8d73f06329eef91
+      created: 1748705805045
+      modified: 1748705805045
+      sortKey: -1748705805045
+      description: ""
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_b1ff892df7a5a3ffd05419d327862caa1b9f7799
+    created: 1746107119295
+    modified: 1746978884623
+  cookies:
+    - key: XSRF-TOKEN
+      value: eyJpdiI6InUwdXRCbGtVVzRNc0h1L2FBQVdnYXc9PSIsInZhbHVlIjoieXMzVWlGaVRpaEhsbnBjaG1jUGJBRjc2N2NxYktFdElsKzU1T1Z4alhKUk96RzI2eDEySlZiS1RDWXUvcjFBb2NyWHpUUGZNankyZUNtYU9mY3RQTjBBMUFUT1JCQzZyK2gwRTdtWHpuMDV0S0FpS0tTNWdkNU1wdEw5VXEwdVIiLCJtYWMiOiI2Y2IzNTJjNTRjZjViZDZhOWFkYmE5Y2JhZWE5NTBhNThhNDY0ZWQ4ZDM4M2NlMDgxOTliYjZkNDM2ZDZiZmM3IiwidGFnIjoiIn0%3D
+      maxAge: 7200
+      domain: localhost
+      path: /
+      hostOnly: true
+      creation: 2025-05-03T19:43:00.070Z
+      lastAccessed: 2025-05-11T15:54:44.622Z
+      sameSite: lax
+      id: 6e98c1fc-e398-4b86-9c84-cc96f55601e3
+    - key: laravel_session
+      value: eyJpdiI6IlI4emZsQU5MS2g4cmQ0N0RFQStUdmc9PSIsInZhbHVlIjoicXU4ZUVtUHNWbmRJNktJNmlIa0JYMnFybU9HTDBWbEhtT0dLU3Q0S2tDbFhGYkFKWEZZYVh6T2ZERW9mZDVjaWxmdnNJZ21HbjVqbUtYNHBXdHNUSHp5ckFUQi80eDFwUlp4SkltNEJwWmNtaDN6Sjk2cEg5MzNyRHlrTXJXVDgiLCJtYWMiOiJiYTE2MTUwNTUyZjZkOTQyNmU3MzI0ZjExNTFiODE3MDU4OGE1YmRmMDJhNjE4YjMyYWZjMzQwYjRkMzk5YzY1IiwidGFnIjoiIn0%3D
+      maxAge: 7200
+      domain: localhost
+      path: /
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-05-03T19:43:00.072Z
+      lastAccessed: 2025-05-11T15:54:44.623Z
+      sameSite: lax
+      id: baf84456-a094-4fe4-8ac1-b10a2fe393e0
+environments:
+  name: Base Environment
+  meta:
+    id: env_b1ff892df7a5a3ffd05419d327862caa1b9f7799
+    created: 1746107119290
+    modified: 1746107119290
+    isPrivate: false
