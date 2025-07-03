@@ -1,9 +1,10 @@
+# Start from official PHP 8.1 FPM image
 FROM php:8.1-fpm
 
 # Set working directory
 WORKDIR /var/www
 
-# Install system dependencies
+# Install system dependencies and PHP extensions
 RUN apt-get update && apt-get install -y \
     build-essential \
     libpng-dev \
@@ -26,20 +27,17 @@ RUN apt-get update && apt-get install -y \
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Copy only composer files first (for caching install)
-COPY composer.json composer.lock ./
+# Copy the full Laravel application code
+COPY . .
 
-# Install PHP dependencies
+# Install PHP dependencies *after* full app is copied
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
-# Then copy the full application code
-COPY . /var/www
-
-# Set correct file permissions
+# Set permissions
 RUN chown -R www-data:www-data /var/www
 
-# Expose port 8000
+# Expose Laravel development port
 EXPOSE 8000
 
-# Start Laravel
+# Laravel startup command
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
