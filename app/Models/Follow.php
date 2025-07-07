@@ -2,7 +2,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\User;
 class Follow extends Model
 {
     protected $fillable = ['citizen_id', 'government_institute_id'];
