@@ -37,7 +37,7 @@ RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 # Set permissions
 RUN chown -R www-data:www-data /var/www
 
-# Clear and cache Laravel configurations, routes, views
+# Clear and cache Laravel configurations, routes, views during build
 RUN php artisan config:clear && \
     php artisan cache:clear && \
     php artisan view:clear && \
@@ -46,8 +46,12 @@ RUN php artisan config:clear && \
     php artisan route:cache && \
     php artisan view:cache
 
+# Copy the entrypoint script and make executable
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
 # Expose Laravel development port
 EXPOSE 8000
 
-# Laravel startup command
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
+# Run entrypoint script on container start
+CMD ["docker-entrypoint.sh"]
