@@ -16,11 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/debug', function () {
-    return response()->json([
-        'status' => 'Laravel is working',
-        'env' => app()->environment(),
-        'debug' => config('app.debug'),
-        'key' => config('app.key') ? 'set' : 'missing'
-    ]);
-});
+

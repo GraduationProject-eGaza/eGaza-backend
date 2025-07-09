@@ -1,4 +1,3 @@
-# Use official PHP 8.1 FPM image
 FROM php:8.1-fpm
 
 # Set working directory
@@ -31,26 +30,14 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Copy the full Laravel application code
 COPY . .
 
-# Install PHP dependencies
+# Install PHP dependencies *after* full app is copied
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
-
-# ✅ Fix autoload-related class errors
-RUN composer dump-autoload
-
-# Clear and rebuild Laravel cache
-RUN php artisan config:clear && \
-    php artisan cache:clear && \
-    php artisan view:clear && \
-    php artisan route:clear && \
-    php artisan config:cache && \
-    php artisan route:cache && \
-    php artisan view:cache
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www
 
-# Expose Laravel port
+# Expose Laravel development port
 EXPOSE 8000
 
-# Start Laravel app
+# Laravel startup command
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
