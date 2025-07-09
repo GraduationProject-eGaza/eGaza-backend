@@ -37,6 +37,15 @@ RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 # Set permissions
 RUN chown -R www-data:www-data /var/www
 
+# Clear and cache Laravel configurations, routes, views
+RUN php artisan config:clear && \
+    php artisan cache:clear && \
+    php artisan view:clear && \
+    php artisan route:clear && \
+    php artisan config:cache && \
+    php artisan route:cache && \
+    php artisan view:cache
+
 # Expose Laravel development port
 EXPOSE 8000
 
