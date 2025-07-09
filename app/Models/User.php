@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use App\Models\Region;
 use App\Models\FriendRequest;
 use App\Models\Announcement;
 use App\Models\ServiceType;
 use App\Models\SocialLink;
+
+
 
 
 class User extends Authenticatable
@@ -94,12 +95,12 @@ class User extends Authenticatable
 
     public function friends()
     {
-        return $this->belongsToMany(User::class, 'friends', 'user_id', 'friend_id');
+        return $this->belongsToMany(self::class, 'friends', 'user_id', 'friend_id');
     }
     // For Citizen
     public function followingInstitutes()
     {
-        return $this->belongsToMany(User::class, 'follows', 'citizen_id', 'government_institute_id');
+        return $this->belongsToMany(self::class, 'follows', 'citizen_id', 'government_institute_id');
     }
 
 
@@ -107,13 +108,13 @@ class User extends Authenticatable
       // Citizens following institutes
     public function followedInstitutes()
     {
-        return $this->belongsToMany(User::class, 'citizen_follows', 'citizen_id', 'institute_id');
+        return $this->belongsToMany(self::class, 'citizen_follows', 'citizen_id', 'institute_id');
     }
 
     // Institutes followed by citizens
     public function followers()
     {
-        return $this->belongsToMany(User::class, 'follows', 'government_institute_id', 'citizen_id');
+        return $this->belongsToMany(self::class, 'follows', 'government_institute_id', 'citizen_id');
     }
 
     // Announcements created by employees
@@ -130,12 +131,12 @@ class User extends Authenticatable
 // Employee -> belongs to one institute
 public function institute()
 {
-    return $this->belongsTo(User::class, 'institute_id')->where('type', 'government-institute');
+    return $this->belongsTo(self::class, 'institute_id')->where('type', 'government-institute');
 }
 // Institute -> has many employees
 public function employees()
 {
-    return $this->hasMany(User::class, 'institute_id')->where('type', 'government-employee');
+    return $this->hasMany(self::class, 'institute_id')->where('type', 'government-employee');
 }
 
 // For government-employee: services they are assigned to

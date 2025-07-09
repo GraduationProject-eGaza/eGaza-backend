@@ -1,4 +1,4 @@
-# Start from official PHP 8.1 FPM image
+# Use official PHP 8.1 FPM image
 FROM php:8.1-fpm
 
 # Set working directory
@@ -31,13 +31,13 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Copy the full Laravel application code
 COPY . .
 
-# Install PHP dependencies *after* full app is copied
+# Install PHP dependencies
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
-# Set permissions
-RUN chown -R www-data:www-data /var/www
+# ✅ Fix autoload-related class errors
+RUN composer dump-autoload
 
-# Clear and cache Laravel configurations, routes, views during build
+# Clear and rebuild Laravel cache
 RUN php artisan config:clear && \
     php artisan cache:clear && \
     php artisan view:clear && \
@@ -46,12 +46,11 @@ RUN php artisan config:clear && \
     php artisan route:cache && \
     php artisan view:cache
 
-# Copy the entrypoint script and make executable
-COPY docker-entrypoint.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+# Set permissions
+RUN chown -R www-data:www-data /var/www
 
-# Expose Laravel development port
+# Expose Laravel port
 EXPOSE 8000
 
-# Run entrypoint script on container start
-CMD ["docker-entrypoint.sh"]
+# Start Laravel app
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
