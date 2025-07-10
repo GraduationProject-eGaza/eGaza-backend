@@ -73,6 +73,7 @@ return [
     | request. You may change the middleware listed below as required.
     |
     */
+    'connection' => env('DB_CONNECTION', 'pgsql'),
 
     'middleware' => [
         'authenticate_session' => Laravel\Sanctum\Http\Middleware\AuthenticateSession::class,
