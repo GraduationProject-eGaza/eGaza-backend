@@ -1,3 +1,4 @@
+# Use official PHP 8.1 FPM image
 FROM php:8.1-fpm
 
 # Set working directory
@@ -10,34 +11,35 @@ RUN apt-get update && apt-get install -y \
     libjpeg62-turbo-dev \
     libfreetype6-dev \
     locales \
-    zip \
-    unzip \
-    git \
-    curl \
-    libonig-dev \
-    libxml2-dev \
-    libzip-dev \
-    libcurl4-openssl-dev \
-    libssl-dev \
-    nano \
-    default-mysql-client \
-    libpq-dev \
+    zip unzip git curl \
+    libonig-dev libxml2-dev libzip-dev \
+    libcurl4-openssl-dev libssl-dev \
+    nano default-mysql-client libpq-dev \
     && docker-php-ext-install pdo_mysql pdo_pgsql mbstring zip exif pcntl bcmath gd
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Copy the full Laravel application code
+# Copy Laravel code
 COPY . .
 
-# Install PHP dependencies *after* full app is copied
+# Install PHP dependencies
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
-# Set permissions
+# Clear & rebuild Laravel cache
+RUN php artisan config:clear && \
+    php artisan cache:clear && \
+    php artisan view:clear && \
+    php artisan route:clear && \
+    php artisan config:cache && \
+    php artisan route:cache && \
+    php artisan view:cache
+
+# Set correct permissions
 RUN chown -R www-data:www-data /var/www
 
-# Expose Laravel development port
+# Expose Laravel port
 EXPOSE 8000
 
-# Laravel startup command
+# Start Laravel app
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]

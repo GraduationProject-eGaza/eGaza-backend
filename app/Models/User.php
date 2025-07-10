@@ -54,7 +54,6 @@ class User extends Authenticatable
         'institution_address',
         'representative_national_id',
         'representative_mobile',
-
         // Government Employee field
         'employee_id',
         'institute_id',
