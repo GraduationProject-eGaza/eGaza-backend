@@ -1,4 +1,3 @@
-# Use official PHP 8.1 FPM image
 FROM php:8.1-fpm
 
 # Set working directory
@@ -26,20 +25,11 @@ COPY . .
 # Install PHP dependencies
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
-# Clear & rebuild Laravel cache
-RUN php artisan config:clear && \
-    php artisan cache:clear && \
-    php artisan view:clear && \
-    php artisan route:clear && \
-    php artisan config:cache && \
-    php artisan route:cache && \
-    php artisan view:cache
-
 # Set correct permissions
 RUN chown -R www-data:www-data /var/www
 
 # Expose Laravel port
 EXPOSE 8000
 
-# Start Laravel app
+# Default command (only runs the server)
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
