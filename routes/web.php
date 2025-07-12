@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,17 @@ Route::get('/', function () {
 });
 Route::get('/debug', function () {
     return response()->file(storage_path('logs/laravel.log'));
+});
+Route::get('/test-db-env', function () {
+    return [
+        'host' => env('DB_HOST'),
+        'connection' => config('database.default'),
+        'url' => env('DATABASE_URL'),
+    ];
+});
+Route::get('/clear-cache', function () {
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('config:cache');
+    return 'Cache cleared successfully!';
 });
