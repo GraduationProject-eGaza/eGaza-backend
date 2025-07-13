@@ -20,6 +20,7 @@ use App\Http\Controllers\Api\SearchController;
 use App\Http\Controllers\Api\MessageController;
 use App\Http\Controllers\Api\BillModule;
 use App\Http\Controllers\Api\InstituteController;
+use App\Models\User;
 
 
 /*
@@ -238,4 +239,10 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/institute/dashboard', [InstituteController::class, 'overview']);
 
 
+});
+
+
+
+Route::get('/debug-user', function () {
+    return User::first();
 });

@@ -60,6 +60,8 @@ return [
     | See: https://docs.github.com/en/code-security/secret-scanning/about-secret-scanning
     |
     */
+    'model' => App\Models\User::class,
+
 
     'token_prefix' => env('SANCTUM_TOKEN_PREFIX', ''),
 
