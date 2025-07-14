@@ -30,8 +30,9 @@ Route::get('/test-db-env', function () {
 Route::get('/clear-cache', function () {
     Artisan::call('config:clear');
     Artisan::call('cache:clear');
-    Artisan::call('config:cache');
-    return 'Cache cleared successfully!';
+    Artisan::call('route:clear');
+    Artisan::call('view:clear');
+    return 'Cache cleared!';
 });
 Route::get('/check-env', function () {
     return response()->json([

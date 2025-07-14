@@ -25,8 +25,9 @@ class AppServiceProvider extends ServiceProvider
     {
         // Morph map fix
         Relation::morphMap([
-            'user' => User::class,
-        ]);
+    'App\\Models\\User' => User::class,
+    'App\\\\Models\\\\User' => User::class, // fix broken ones
+             ]);
 
         // Use custom token model
         Sanctum::usePersonalAccessTokenModel(CustomAccessToken::class);
