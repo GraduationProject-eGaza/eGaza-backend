@@ -25,11 +25,14 @@ COPY . .
 # Install PHP dependencies
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
+# Create Laravel storage symlink (fixes public storage access)
+RUN php artisan storage:link || true
+
 # Set correct permissions
 RUN chown -R www-data:www-data /var/www
 
 # Expose Laravel port
 EXPOSE 8000
 
-# Default command (only runs the server)
+# Default command (runs the Laravel server)
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
