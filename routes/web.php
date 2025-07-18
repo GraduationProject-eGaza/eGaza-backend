@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\Api\CitizenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,26 +17,5 @@ use Illuminate\Support\Facades\Artisan;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/debug', function () {
-    return response()->file(storage_path('logs/laravel.log'));
-});
-Route::get('/test-db-env', function () {
-    return [
-        'host' => env('DB_HOST'),
-        'connection' => config('database.default'),
-        'url' => env('DATABASE_URL'),
-    ];
-});
-Route::get('/clear-cache', function () {
-    Artisan::call('config:clear');
-    Artisan::call('cache:clear');
-    Artisan::call('route:clear');
-    Artisan::call('view:clear');
-    return 'Cache cleared!';
-});
-Route::get('/check-env', function () {
-    return response()->json([
-        'app_key' => config('app.key'),
-        'env_key' => env('APP_KEY'),
-    ]);
-});
+Route::get('/public-profile/{username}', [CitizenController::class, 'show']);
+

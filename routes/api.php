@@ -242,7 +242,3 @@ Route::middleware(['auth:sanctum'])->group(function () {
 });
 
 
-
-Route::get('/debug-user', function () {
-    return User::first();
-});
