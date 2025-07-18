@@ -19,14 +19,20 @@ RUN apt-get update && apt-get install -y \
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Copy Laravel code
+# Copy Laravel application code
 COPY . .
 
 # Install PHP dependencies
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
-# Create Laravel storage symlink (fixes public storage access)
-RUN php artisan storage:link || true
+# Clear cache (safe for production builds)
+RUN php artisan config:clear && \
+    php artisan route:clear && \
+    php artisan view:clear
+
+# Fix symbolic link issue if it already exists
+RUN if [ -L "public/storage" ] || [ -e "public/storage" ]; then rm -rf public/storage; fi && \
+    php artisan storage:link
 
 # Set correct permissions
 RUN chown -R www-data:www-data /var/www
@@ -34,5 +40,5 @@ RUN chown -R www-data:www-data /var/www
 # Expose Laravel port
 EXPOSE 8000
 
-# Default command (runs the Laravel server)
+# Default command
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
