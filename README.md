@@ -73,5 +73,4 @@ This repository for Backend Development
 ## 🗄️ Database
 - Provider: [Supabase](https://supabase.com)  
 - Type: PostgreSQL  
-- Dashboard: [View Database Schema](https://supabase.com/dashboard/project/nwfkjjxybpgnouyfflab/database/schemas)
 
