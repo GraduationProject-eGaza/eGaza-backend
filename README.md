@@ -68,4 +68,5 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 =======
 # eGaza-backend
 This repository for Backend Development
->>>>>>> 0567fd8182583a3bc3a69aa49ea555b89d98c47e
+## 🚀 Backend Deployment
+[![Render Deployment](https://img.shields.io/badge/Backend-Live%20on%20Render-blue?logo=render)](https://egaza-backend.onrender.com)
